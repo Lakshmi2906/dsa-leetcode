@@ -77,3 +77,62 @@ public class Main {
     prime(13);
   }
 }
+
+GCD USING EUCLIDEAN:
+class Solution {
+    public int findGCD(int[] nums) {
+        Arrays.sort(nums);
+         int min=Integer.MAX_VALUE;
+         int max=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++){
+             if(nums[i] < min){
+                min=nums[i];
+             }
+             else{
+                max=nums[i];
+             }
+        }
+        int ans=1;
+        for(int i=1;i<=min & i<= max;i++){
+         if(min%i==0 && max%i==0){
+            ans= i;
+         }
+        }
+        return ans;
+    }
+}
+
+REVERSE OF A NUMBER:
+class Solution {
+    public int reverse(int x) {
+        long rev=0;
+        while(x!=0){
+            int lastdig=x%10;
+            x=x/10;
+            rev=(rev*10)+lastdig;
+            if(rev>Integer.MAX_VALUE||rev<Integer.MIN_VALUE){
+                return 0;
+            }
+        }
+        return (int)rev;
+    }
+}
+
+PALINDROME OF A NUMBER:
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        int org=x;
+        long rev=0;
+        while(x!=0){
+            int digit=x%10;
+            x=x/10;
+            rev=rev*10+digit;
+        }
+        return ( rev==org );
+    }
+}
+
+
