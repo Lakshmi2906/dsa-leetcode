@@ -14,4 +14,66 @@ class Solution {
     }
 }
 
-REVERSE NUMBER:
+ARMSTRONG  NUMBER:
+import java.util.*;
+import java.lang.Math;
+
+public class Main {
+   public static Boolean Armstrong(int num){
+     int org=num;
+     int sum=0;
+     while(num!=0){
+       int len=String.valueOf(num).length();
+       int ld=num%10;
+       num=num/10;
+       sum+=pow(ld,3);
+     }
+     return(sum==org);
+   }
+    public static void main(String[] args) {
+      System.out.println(Armstrong(153));
+  }
+}
+
+PRINT ALL DIVISORS:
+import java.util.*;
+import java.lang.Math;
+
+public class Main {
+   public static void divisor(int num){
+     for(int i=1;i*i<=num;i++){
+       if(num%i==0){
+         System.out.print(i+" ");
+       }
+       if((num/i)!=1){
+         System.out.print((num/i)+" ");
+       }
+     }
+   }
+    public static void main(String[] args) {
+    divisor(10);
+  }
+}
+
+GIVEN NO PRIME OR NOT:
+import java.util.*;
+import java.lang.Math;
+
+public class Main {
+   public static void prime(int num){
+     int cnt=0;
+     for(int i=1;i*i<=num;i++){
+       if(num%i==0){
+         cnt++;
+         if((num/i)!=i){
+           cnt++;
+       }
+     }
+    }
+      if(cnt==2) System.out.print("True");
+      else System.out.print("False");
+   }
+    public static void main(String[] args) {
+    prime(13);
+  }
+}
